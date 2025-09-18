@@ -38,16 +38,18 @@ public class SupermarketBillingSystem {
 
         // 6. Print receipt
         System.out.println("\n--- Supermarket Receipt ---");
-        System.out.printf("%-15s %-10s %-15s %-10s\n", "Item", "Qty", "Price/Unit", "Subtotal");
-        for (int i = 0; i < itemCount; i++) {
-            System.out.printf("%-15s %-10d %-15.2f %-10.2f\n",
-                    itemNames[i], quantities[i], prices[i], subtotals[i]);
-        }
+        System.out.println("Item           Qty        Price/Unit      Subtotal");
+		        for (int i = 0; i < itemCount; i++) {
+		            System.out.println(itemNames[i] + "        " 
+		                               + quantities[i] + "        " 
+		                               + prices[i] + "        " 
+		                               + subtotals[i]);
+		        }
 
-        System.out.println("-------------------------------------------");
-        System.out.printf("Grand Total (before discount): %.2f\n", totalBill);
-        System.out.printf("Discount: %.2f\n", discount);
-        System.out.printf("Final Amount Payable: %.2f\n", finalAmount);
+		        System.out.println("-------------------------------------------");
+		        System.out.println("Grand Total (before discount): " + totalBill);
+		        System.out.println("Discount: " + discount);
+		        System.out.println("Final Amount Payable: " + finalAmount);
 
         scanner.close();
     }

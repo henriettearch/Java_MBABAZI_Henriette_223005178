@@ -48,7 +48,7 @@ public class LoanCalculator implements ActionListener {
 
         totalLabel.setBounds(30, 110, 120, 30);
         totalField.setBounds(160, 110, 200, 30);
-        totalField.setEditable(false); // read-only
+        totalField.setEditable(false);
 
         calculateBtn.setBounds(130, 160, 120, 30);
     }
@@ -74,14 +74,13 @@ public class LoanCalculator implements ActionListener {
                 double amount = Double.parseDouble(amountField.getText());
                 int years = Integer.parseInt(durationField.getText());
 
-                // Example: 0.6% interest per year
                 double total = amount + (amount * 0.006 * years);
 
-                // Format result without decimals
                 totalField.setText(String.valueOf((long) total));
             } catch (NumberFormatException ex) {
                 totalField.setText("Invalid input!");
             }
         }
     }
+
     }
